@@ -24,7 +24,9 @@ server.use((req, res, next) => {
 });
 
 server.use('/', routes);
-
+server.get("/",(req,res)=>{
+  res.send("Bienvenido")
+})
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   const status = err.status || 500;
