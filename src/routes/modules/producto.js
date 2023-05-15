@@ -55,7 +55,7 @@ const getDataBase = async () => {
 };
 const getBebidasApi = async () => {
   try {
-    const bebidasDB = await fs.promises.readFile("../api/src/DB-Bebidas.json")
+    const bebidasDB = await fs.promises.readFile("./src/DB-Bebidas.json")
     const bebidasInfo = JSON.parse(bebidasDB).results
     const allBebidasDb = await bebidasInfo.map((e) => {
       Producto.create(e);
