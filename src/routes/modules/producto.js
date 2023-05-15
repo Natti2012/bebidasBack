@@ -4,6 +4,7 @@ const fs = require("fs")
 const { Producto, Usuario, Favorito, Comprado } = require("../../db");
 
 const bodyParser = require("body-parser");
+const { ChildProcess } = require("child_process");
 
 const router = Router();
 
@@ -76,7 +77,7 @@ const getBebidasApi = async () => {
 //   }
 // })
 router.get("/bebidas", async (req, res) => {
-
+console.log("getBebidas");
   try {
     let dataInfo = await getDataBase();
     if (dataInfo.length === 0) {
