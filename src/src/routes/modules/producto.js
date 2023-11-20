@@ -92,7 +92,7 @@ router.get("/bebidas", async (req, res) => {
       res.json(dataInfo);
     }
   } catch (error) {
-    next(error);
+    throw new Error(error);
   }
 });
 //--------------------BEBIDA-------------------------
