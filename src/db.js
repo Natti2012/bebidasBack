@@ -3,13 +3,13 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-    PGUSER,
-    PGPASSWORD,
-    PGHOST,
+    DB_USER,
+    DB_PASSWORD,
+    DB_HOST,
     PGPORT
 } = process.env;
 
-const sequelize = new Sequelize(`postgresql://postgres:fEau9UjumgVBBEdKJkP4@containers-us-west-106.railway.app:7130/railway`, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/bebidas_db`, {
     
     port: PGPORT,
     logging: false, // set to console.log to see the raw SQL queries
